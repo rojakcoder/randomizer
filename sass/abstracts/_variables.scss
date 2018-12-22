@@ -1,0 +1,88 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass variables.
+// -----------------------------------------------------------------------------
+
+/// Primary background colour of the page.
+/// @type Color
+$color-background-pri: #F7F8FC !default;
+
+/// Main brand color
+/// @type Color
+$brand-color: hsb(208, 67, 41, 0.5) !default;
+
+/// Line height - defines the line height of paragraphs.
+/// @type Length
+$line-height: 1.5em !default;
+
+/// Action colour - the main action colour
+/// @type Color
+$action-color1: #3286CF;
+
+
+
+
+/// Regular font family
+/// @type List
+$text-font-stack: 'Open Sans', 'Helvetica Neue Light', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif !default;
+
+/// Code (monospace) font family
+/// @type List
+$code-font-stack: 'Courier New', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Monaco', monospace !default;
+
+
+
+
+
+/// Copy text color
+/// @type Color
+$text-color: rgba(0, 0, 0, 0.75) !default;
+
+/// Light grey
+/// @type Color
+$light-grey: rgb(237, 237, 237) !default;
+
+/// Medium grey
+/// @type Color
+$mid-grey: rgb(153, 153, 153) !default;
+
+/// Dark grey
+/// @type Color
+$dark-grey: rgb(68, 68, 68) !default;
+
+
+
+
+
+/// Container's maximum width
+/// Set as 1190 to accommodate for 1280 pixels less the scrollbars.
+/// 1190 = (12 * 90) + (11 * 10)
+/// @type Length
+$max-width: 1190px !default;
+
+
+
+
+
+/// Breakpoints map
+/// @prop {String} keys - Keys are identifiers mapped to a given length
+/// @prop {Map} values - Values are actual breakpoints expressed in pixels
+$breakpoints: (
+  'small': 320px,
+  'medium': 768px,
+  'large': 1024px,
+  'huge': 1280px,
+) !default;
+
+/// The width at which mobile responsive table (table.mobile) will change to a
+/// column view.
+$breakpoint-table: 768px !default;
+
+
+
+
+
+/// Relative or absolute URL where all assets are served from
+/// @type String
+/// @example scss - When using a CDN
+///   $base-url: 'http://cdn.example.com/assets/';
+$base-url: '/assets/' !default;
