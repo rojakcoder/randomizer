@@ -11,16 +11,14 @@
 
     <item-add-field
       add-field-placeholder="Add new item"
-      @add-new-item="addNewItem"
       ></item-add-field>
 
     <item-list-plain
-      :items="items"
-      @clear-items="clearItems"
+      :items="linkitems"
     ></item-list-plain>
 
     <button-next
-      :items="items"
+      :items="linkitems"
     ></button-next>
   </div><!-- #app-page -->
 </template>
@@ -40,24 +38,27 @@ export default {
     NavBar
   },
   data () {
-  return {
-    links: [
-      {
-        href: '#',
-        label: 'About Randomizer'
-      }
-    ],
-    items: []
-  };
+    return {
+      links: [
+        {
+          href: '#',
+          label: 'About Randomizer'
+        }
+      ]
+    };
   },
-  methods: {
-    addNewItem: function (item) {
-      this.items.push({
-        name: item
-      });
-    },
-    clearItems() {
-        this.items = [];
+  computed: {
+    linkitems () {
+      return this.$store.getters.linkitems;
+    }
+  },
+  mounted() {
+    if (localStorage.getItem('items')) {
+      try {
+        this.$store.commit('update', JSON.parse(localStorage.items));
+      } catch (e) {
+        localStorage.removeItem('items');
+      }
     }
   }
 };

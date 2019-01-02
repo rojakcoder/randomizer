@@ -28,10 +28,15 @@
 <script>
 export default {
   name: 'item-list-plain',
-  props: [ 'items' ],
+  computed: {
+    items() {
+      return this.$store.getters.linkitems;
+    }
+  },
   methods: {
     clearItems() {
-      this.$emit('clear-items');
+      this.$store.commit('clear');
+      localStorage.removeItem('items');
     }
   }
 };

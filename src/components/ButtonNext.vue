@@ -16,10 +16,9 @@
 <script>
 export default {
   name: 'button-next',
-  props: ['items'],
   computed: {
     count() {
-      return this.items ? this.items.length : 0;
+      return this.$store.getters.linkitems.length;
     }
   }
 }

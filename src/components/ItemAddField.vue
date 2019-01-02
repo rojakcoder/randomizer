@@ -33,7 +33,10 @@ export default {
   },
   methods: {
     addItem () {
-      this.$emit('add-new-item', this.itemNew);
+      this.$store.commit('add', {
+        name: this.itemNew
+      });
+      localStorage.items = JSON.stringify(this.$store.state.linkitems);
       this.itemNew = '';
     }
   }
