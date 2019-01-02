@@ -33,11 +33,13 @@ export default {
   },
   methods: {
     addItem () {
-      this.$store.commit('add', {
-        name: this.itemNew
-      });
-      localStorage.items = JSON.stringify(this.$store.state.linkitems);
-      this.itemNew = '';
+      if (this.itemNew.trim()) {
+        this.$store.commit('add', {
+          name: this.itemNew
+        });
+        localStorage.items = JSON.stringify(this.$store.state.linkitems);
+        this.itemNew = '';
+      }
     }
   }
 }
@@ -45,6 +47,7 @@ export default {
 
 <style lang="scss">
 @import '../../sass/abstracts/_variables.scss';
+@import '../../sass/abstracts/_mixins.scss';
 
 /**
  * The big white bar.
@@ -70,6 +73,11 @@ export default {
   border-width: 0;
   overflow: hidden; /* [1] */
   font-size: 2rem;
+
+  @include placeholder {
+    opacity: 1;
+    color: rgba(0, 0, 0, 0.2);
+  }
 }
 
 /**
