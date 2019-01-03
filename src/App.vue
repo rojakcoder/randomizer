@@ -29,6 +29,9 @@ import ItemAddField from './components/ItemAddField.vue';
 import ItemListPlain from './components/ItemListPlain.vue';
 import NavBar from './components/NavBar.vue';
 
+/**
+ * App retrieves the data from Local Storage.
+ */
 export default {
   name: 'app',
   components: {
@@ -55,7 +58,7 @@ export default {
   mounted() {
     if (localStorage.getItem('items')) {
       try {
-        this.$store.commit('update', JSON.parse(localStorage.items));
+        this.$store.commit('set', JSON.parse(localStorage.items));
       } catch (e) {
         localStorage.removeItem('items');
       }

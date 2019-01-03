@@ -37,7 +37,6 @@ export default {
         this.$store.commit('add', {
           name: this.itemNew
         });
-        localStorage.items = JSON.stringify(this.$store.state.linkitems);
         this.itemNew = '';
       }
     }

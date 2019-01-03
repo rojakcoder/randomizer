@@ -8,10 +8,24 @@
 
       <ul class="list-plain">
         <li
-          class="list-item"
-          v-for="item in items"
-          v-text="item.name"
-        ></li>
+          class="list-item clearfix"
+          :class="{ selected: item.isSelected }"
+          v-for="(item, index) in items"
+          @click="selectItem(index)"
+        >
+          <span
+            v-if="!item.isSelected"
+          >
+            {{ item.name }}
+          </span>
+          <button
+            v-else
+            class="btnemb"
+            @click.stop="remove(index)"
+          >
+            Remove
+          </button>
+        </li>
       </ul><!-- .list-plain -->
 
       <div
@@ -37,6 +51,17 @@ export default {
     clearItems() {
       this.$store.commit('clear');
       localStorage.removeItem('items');
+    },
+    remove(index) {
+      this.$store.commit('remove', {
+        index
+      });
+    },
+    selectItem(index) {
+      this.$store.commit('select', {
+        selected: true,
+        index
+      });
     }
   }
 };
@@ -56,6 +81,10 @@ export default {
   color: #1D2A36;
 }
 
+.list-item.selected {
+  background-color: #CF466F;
+}
+
 .text-guide {
   padding: 1rem;
   color: #808080;
@@ -64,6 +93,21 @@ export default {
 .afteroptions {
   margin: 1rem;
   text-align: right;
+}
+
+.btnemb {
+  padding: 0.375rem 0.5rem;
+  border: 1px solid white;
+  border-radius: 2px;
+  float: right;
+  font-size: 0.875rem;
+  color: white;
+
+  &:hover {
+    border-color: #CF466F;
+    color: #CF466F;
+    background-color: rgba(255, 255, 255, 0.5);
+  }
 }
 </style>
 
