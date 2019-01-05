@@ -1,13 +1,16 @@
 import Vue from 'vue';
-import App from './App.vue';
+//import App from './App.vue';
+import AppShell from './AppShell.vue';
 import store from './store/store';
+import router from './router';
 
 new Vue({
   el: '#app',
   store,
-  render: h => h(App),
+  router,
+  render: h => h(AppShell),
   components: {
-    App
+    AppShell
   }
 });
 
