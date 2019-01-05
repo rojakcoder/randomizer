@@ -1,62 +1,37 @@
 <template>
-  <div id="app">
+  <div id="appshell">
 
-    <item-add-field
-      add-field-placeholder="Add new item"
-    ></item-add-field>
+    <div class="site-header">
+      <div class="container">
+        <a href="/">Randomizer</a>
+      </div>
+    </div><!-- .site-header -->
 
-    <item-list-plain
-      :items="linkitems"
-    ></item-list-plain>
+    <nav-bar
+      :links="links"
+    ></nav-bar>
 
-    <button-next
-      :items="linkitems"
-    ></button-next>
-  </div><!-- #app-page -->
+    <router-view></router-view>
+  </div>
 </template>
 
 <script>
-import ButtonNext from './components/ButtonNext.vue';
-import ItemAddField from './components/ItemAddField.vue';
-import ItemListPlain from './components/ItemListPlain.vue';
 import NavBar from './components/NavBar.vue';
 
-/**
- * App retrieves the data from Local Storage.
- */
 export default {
   name: 'app',
   components: {
-    ButtonNext,
-    ItemAddField,
-    ItemListPlain,
     NavBar
   },
   data () {
     return {
       links: [
         {
-          href: '#',
           to: '/about',
           label: 'About Randomizer'
         }
       ]
-    };
-  },
-  computed: {
-    linkitems () {
-      return this.$store.getters.linkitems;
-    }
-  },
-  mounted() {
-    if (localStorage.getItem('items')) {
-      try {
-        this.$store.commit('set', JSON.parse(localStorage.items));
-      } catch (e) {
-        localStorage.removeItem('items');
-      }
     }
   }
 };
 </script>
-
