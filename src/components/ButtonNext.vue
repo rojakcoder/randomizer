@@ -3,11 +3,12 @@
     <div class="txtc"
       v-if="count > 0"
     >
-      <button
-        class="btn-next"
+      <a
+        class="btn-next full"
+        href="#/action"
       >
         Next ({{ count }})
-      </button>
+      </a>
     </div>
 
   </div>

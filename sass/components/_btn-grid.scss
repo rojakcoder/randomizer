@@ -1,0 +1,16 @@
+.btngrid {
+  margin-top: 1rem;
+  margin-bottom: 3rem;
+}
+
+.btngrid__subtitle {
+  margin-bottom: 1rem;
+}
+
+.btngrid__grid {
+  display: grid;
+  grid-gap: 0.625rem;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+}
+

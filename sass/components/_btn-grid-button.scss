@@ -1,0 +1,50 @@
+.bgb {
+	padding: 1rem;
+	border-radius: 8px;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	align-items: center;
+	background-color: $action-color1;
+}
+
+.bgb.alt {
+	background-color: $action-color3;
+}
+
+.bgb.disabled {
+	opacity: 0.5;
+
+	.bgb__icon {
+		border-color: rgba(255, 255, 255, 0.5);
+		color: rgba(255, 255, 255, 0.5);
+	}
+
+	.bgb__title {
+		color: rgba(255, 255, 255, 0.5);
+	}
+}
+
+.bgb__icon {
+	margin: 1rem auto;
+	border: 4px solid white;
+	border-radius: 50%;
+	height: 3.5rem;
+	width: 3.5rem;
+	display: table;
+	font-size: 2rem;
+	font-weight: bold;
+	color: white;
+}
+
+.bgb__icon__wrapper {
+	display: table-cell;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.bgb__title {
+	font-weight: bold;
+	color: rgba(255, 255, 255, 0.8);
+}
+
