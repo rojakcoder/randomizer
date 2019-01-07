@@ -21,7 +21,7 @@
   },
   "scripts": {
     "build": "node_modules/rollup/bin/rollup -c scripts/rollup.config.js",
-    "build:dev": "node_modules/rollup/bin/rollup -c scripts/rollup.config.js -w",
+    "build:dev:js": "node_modules/rollup/bin/rollup -c scripts/rollup.config.js -w",
     "build:dev:css": "node_modules/node-sass/bin/node-sass sass/ -o dist/ --watch --recursive",
     "build:prod:css": "node_modules/node-sass/bin/node-sass sass/ -o dist/",
     "test": "echo \"Error: no test specified\" && exit 1"

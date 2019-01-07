@@ -1,0 +1,25 @@
+.item-list-selected {
+  .list-item {
+    margin-bottom: 0.5rem;
+    padding: 0.75rem;
+    background-color: hsla(0, 0, 100, 0.9);
+    list-style: none;
+    font-size: 1.5rem;
+    color: $action-color2;
+  }
+
+  .list-selected {
+    margin-bottom: 2rem;
+
+    .list-item {
+      border: 1px solid $action-color2;
+    }
+  }
+
+  .list-unselected {
+    .list-item {
+      color: rgba(29, 42, 54, 0.3);
+    }
+  }
+}
+

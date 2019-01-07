@@ -47,15 +47,6 @@ export default {
     linkitems () {
       return this.$store.getters.linkitems;
     }
-  },
-  mounted() {
-    if (localStorage.getItem('items')) {
-      try {
-        this.$store.commit('set', JSON.parse(localStorage.items));
-      } catch (e) {
-        localStorage.removeItem('items');
-      }
-    }
   }
 };
 </script>

@@ -1,5 +1,8 @@
 <template>
-  <div class="bgb">
+  <a
+    class="bgb"
+    :href="href"
+  >
     <div class="bgb__icon">
       <div class="bgb__icon__wrapper">
         {{ icon }}
@@ -8,13 +11,13 @@
     <div class="bgb__title">
       {{ title }}
     </div>
-  </div>
+  </a>
 </template>
 
 <script>
 export default {
   name: 'btn-grid-button',
-  props: ['title', 'icon']
+  props: ['title', 'icon', 'href']
 };
 </script>
 

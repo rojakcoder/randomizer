@@ -7,6 +7,7 @@
     <div class="btngrid__grid">
 
       <btn-grid-button
+        href="/#/action-one"
         title="Pick one item"
         icon="1"
       ></btn-grid-button>

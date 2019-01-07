@@ -12,7 +12,10 @@
         @keyup.enter="addItem"
       />
       <div class="item-add-field__button"
-        @click="addItem">+</div><!-- .add-field-button -->
+        @click="addItem"
+      >
+        &#x2b;
+      </div><!-- .add-field-button -->
     </div><!-- .add-field -->
 
   </div><!-- .container-small -->
