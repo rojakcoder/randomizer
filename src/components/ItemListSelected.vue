@@ -14,7 +14,7 @@
           class="list-item"
           v-for="item in itemsUnselected"
         >
-          {{ item.name }}
+          {{ item.name ? item.name : '-' }}
         </li>
       </ul>
 
@@ -37,8 +37,8 @@ export default {
       return this.$store.getters.linkitems;
     },
     itemSelected() {
-      if (this.randNum === -1) {
-        return '-';
+      if (this.randNum === -1 || !this.$store.getters.linkitems || !this.$store.getters.linkitems.length) {
+        return { name: '-' };
       }
       return this.$store.getters.linkitems[this.randNum];
     },
@@ -57,7 +57,10 @@ export default {
       this.randNum = Math.floor(Math.random() * this.count);
     }
   },
-  beforeUpdate: function () {
+  created: function () {
+    this.pickItem(); // need to repeat in updated
+  },
+  updated: function () {
     this.pickItem();
   }
 };
