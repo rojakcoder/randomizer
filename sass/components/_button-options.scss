@@ -1,0 +1,22 @@
+.button-options {
+  margin-bottom: 2rem;
+  padding: 0 0.5rem;
+
+  .optbar {
+    padding: 0.75rem 1rem;
+    border-left: 4px solid $action-color4;
+    background-color: white;
+  }
+
+  .optbar__title {
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    color: $action-color1;
+  }
+
+  .optbar__body {
+    font-size: smaller;
+    color: $action-color4;
+  }
+}
+

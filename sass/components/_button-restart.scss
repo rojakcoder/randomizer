@@ -1,0 +1,31 @@
+.button-restart {
+  margin: 2rem auto 4rem;
+  padding-top: 2rem;
+  border-top: 1px dashed $action-color4;
+  text-align: center;
+
+  .btnsingle {
+    padding: 1rem;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+
+    background: #cf466f; /* Old browsers */
+    background: -moz-linear-gradient(top, #cf466f 0%, #b52b55 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #cf466f 0%,#b52b55 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #cf466f 0%,#b52b55 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cf466f', endColorstr='#b52b55',GradientType=0 ); /* IE6-9 */
+  }
+
+  .btnsingle__title {
+    margin-bottom: 0.75rem;
+    text-transform: uppercase;
+    color: white;
+  }
+
+  .btnsingle__body {
+    font-size: smaller;
+    color: rgba(255, 255, 255, 0.8);
+  }
+}
+

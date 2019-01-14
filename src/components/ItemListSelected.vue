@@ -9,6 +9,8 @@
         </li>
       </ul>
 
+      <button-options></button-options>
+
       <ul class="list-unselected">
         <li
           class="list-item"
@@ -18,12 +20,21 @@
         </li>
       </ul>
 
+      <button-restart></button-restart>
+
   </div>
 </template>
 
 <script>
+import ButtonOptions from '../components/ButtonOptions.vue';
+import ButtonRestart from '../components/ButtonRestart.vue';
+
 export default {
   name: 'item-list-selected',
+  components: {
+    ButtonOptions,
+    ButtonRestart
+  },
   data() {
     return {
       randNum: -1

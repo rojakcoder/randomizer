@@ -28,4 +28,6 @@ import './components/_button-prev.scss';
 import './components/_action-title.scss';
 import './components/_action-subtitle.scss';
 import './components/_item-list-selected.scss';
+import './components/_button-options.scss';
+import './components/_button-restart.scss';
 
