@@ -3,6 +3,7 @@ import css from 'rollup-plugin-css-only';
 import resolve from 'rollup-plugin-node-resolve';
 import replace from 'rollup-plugin-replace';
 import postcss from 'rollup-plugin-postcss'; // This must be imported in order to compile SCSS.
+import scss from 'rollup-plugin-scss';
 
 var plugins = [
   css(
@@ -31,13 +32,25 @@ var plugins = [
 //}
 
 export default [
-    {
-      input: 'src/main.js',
-      output: {
-        file: 'dist/build.js',
-        format: 'iife'
-      },
-      plugins
-    }
+  {
+    input: 'src/main.js',
+    output: {
+      file: 'dist/build.js',
+      format: 'iife'
+    },
+    plugins
+  },
+  {
+    input: 'sass/main.js',
+    output: {
+      file: 'dist/main.js',
+      format: 'iife'
+    },
+    plugins: [
+      scss({
+        output: 'dist/main.css'
+      })
+    ]
+  }
 ];
 
