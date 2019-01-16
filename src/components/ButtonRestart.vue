@@ -1,13 +1,13 @@
 <template>
   <div class="button-restart">
-    <a class="btnsingle" href="#/">
+    <router-link class="btnsingle" to="/">
       <div class="btnsingle__title">
         New list
       </div>
       <div class="btnsingle__body">
         Start an empty list
       </div>
-    </a>
+    </router-link>
   </div>
 </template>
 

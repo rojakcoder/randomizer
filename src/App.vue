@@ -33,7 +33,7 @@ export default {
       ]
     }
   },
-  mounted() {
+  created() {
     if (localStorage.getItem('items')) {
       try {
         this.$store.commit('set', JSON.parse(localStorage.items));

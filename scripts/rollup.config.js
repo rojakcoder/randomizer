@@ -36,6 +36,7 @@ export default [
     input: 'src/main.js',
     output: {
       file: 'dist/build.js',
+      sourcemap: true,
       format: 'iife'
     },
     plugins

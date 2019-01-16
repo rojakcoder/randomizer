@@ -4,8 +4,9 @@
       <ul class="list-selected">
         <li
           class="list-item"
+          v-for="item in itemsSelected"
         >
-          {{ itemSelected.name }}
+          {{ item ? item.name : '' }}
         </li>
       </ul>
 
@@ -16,7 +17,7 @@
           class="list-item"
           v-for="item in itemsUnselected"
         >
-          {{ item.name ? item.name : '-' }}
+          {{ item ? item.name : '-' }}
         </li>
       </ul>
 
@@ -37,39 +38,30 @@ export default {
   },
   data() {
     return {
+      itemsSelected: [],
+      itemsUnselected: [],
       randNum: -1
     };
   },
-  computed: {
-    count() {
-      return this.items.length;
-    },
-    items() {
-      return this.$store.getters.linkitems;
-    },
-    itemSelected() {
-      if (this.randNum === -1 || !this.$store.getters.linkitems || !this.$store.getters.linkitems.length) {
-        return { name: '-' };
+  methods: {
+    pickItem() {
+      if (!this.$store.getters.linkitems || !this.$store.getters.linkitems.length) {
+        this.items = [];
       }
-      return this.$store.getters.linkitems[this.randNum];
-    },
-    itemsUnselected() {
-      if (this.randNum === -1) {
-        return this.$store.getters.linkitems;
-      }
-      return [
+
+      let count = this.$store.getters.linkitems.length;
+      this.randNum = Math.floor(Math.random() * count);
+      this.itemsSelected.push(this.$store.getters.linkitems[this.randNum]);
+      this.itemsUnselected = [
         ...(this.$store.getters.linkitems.slice(0, this.randNum)),
         ...(this.$store.getters.linkitems.slice(this.randNum + 1))
       ];
     }
   },
-  methods: {
-    pickItem() {
-      this.randNum = Math.floor(Math.random() * this.count);
-    }
-  },
   created: function () {
-    this.pickItem(); // need to repeat in updated
+    if (this.$store.getters.linkitems) {
+      this.pickItem(); // need to repeat in updated
+    }
   },
   updated: function () {
     this.pickItem();
