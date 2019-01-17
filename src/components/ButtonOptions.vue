@@ -1,6 +1,9 @@
 <template>
   <div class="button-options">
-    <div class="optbar">
+    <div
+      class="optbar clickable"
+      @click="$emit('pick-more')"
+    >
 
       <div class="optbar__title">
         {{ title }}
@@ -9,6 +12,7 @@
       <div class="optbar__body">
         {{ body }}
       </div>
+
     </div>
   </div>
 </template>

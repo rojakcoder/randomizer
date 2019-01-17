@@ -10,7 +10,9 @@
         </li>
       </ul>
 
-      <button-options></button-options>
+      <button-options
+        @pick-more="onPickMore"
+      ></button-options>
 
       <ul class="list-unselected">
         <li
@@ -44,6 +46,15 @@ export default {
     };
   },
   methods: {
+    onPickMore() {
+      this.randNum = Math.floor(Math.random() * this.itemsUnselected.length);
+      this.itemsSelected.push(this.itemsUnselected[this.randNum]);
+      this.itemsUnselected = [
+        ...(this.itemsUnselected.slice(0, this.randNum)),
+        ...(this.itemsUnselected.slice(this.randNum + 1))
+      ];
+      this.$emit('update-count', this.itemsSelected.length);
+    },
     pickItem() {
       if (!this.$store.getters.linkitems || !this.$store.getters.linkitems.length) {
         this.items = [];
@@ -56,15 +67,13 @@ export default {
         ...(this.$store.getters.linkitems.slice(0, this.randNum)),
         ...(this.$store.getters.linkitems.slice(this.randNum + 1))
       ];
+      this.$emit('update-count', this.itemsSelected.length);
     }
   },
   created: function () {
     if (this.$store.getters.linkitems) {
-      this.pickItem(); // need to repeat in updated
+      this.pickItem();
     }
-  },
-  updated: function () {
-    this.pickItem();
   }
 };
 </script>
