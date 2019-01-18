@@ -11,6 +11,7 @@
       </ul>
 
       <button-options
+        v-if="itemsUnselected.length > 0"
         @pick-more="onPickMore"
       ></button-options>
 

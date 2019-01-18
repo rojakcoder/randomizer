@@ -19,6 +19,7 @@ export default new Vuex.Store({
     },
     clear (state) {
       state.linkitems = [];
+      localStorage.removeItem('items');
     },
     remove (state, { index }) {
       state.linkitems.splice(index, 1);
