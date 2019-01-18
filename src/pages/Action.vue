@@ -1,24 +1,33 @@
 <template>
   <div class="container-small">
+
+    <back-nav
+      @back="onClickBack"
+    ></back-nav>
+
     <list-title></list-title>
     <btn-grid></btn-grid>
-    <button-prev
-      label="Change items"
-    ></button-prev>
   </div>
+
 </template>
 
 <script>
+import BackNav from '../components/BackNav.vue';
 import ListTitle from '../components/ListTitle.vue';
 import BtnGrid from '../components/BtnGrid.vue';
-import ButtonPrev from '../components/ButtonPrev.vue';
+//@deprecated import ButtonPrev from '../components/ButtonPrev.vue';
 
 export default {
   name: 'action',
   components: {
+    BackNav,
     ListTitle,
-    BtnGrid,
-    ButtonPrev
+    BtnGrid
+  },
+  methods: {
+    onClickBack() {
+      this.$router.push('/');
+    }
   }
 }
 </script>

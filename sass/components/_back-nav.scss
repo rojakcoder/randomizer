@@ -1,0 +1,32 @@
+.back-nav {
+  margin-bottom: 1rem;
+  display: flex;
+  vertical-align: middle;
+  align-items: center;
+  position: absolute;
+  top: 4.5rem;
+  left: 0.5rem;
+  color: $action-color1;
+  cursor: pointer;
+
+  .material-icons {
+    font-size: 3rem;
+  }
+
+  .label {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+  }
+}
+
+@include mediaquery("max-width", map-get($breakpoints, medium)) {
+  .back-nav {
+    top: 0.5rem;
+    color: white;
+
+    .label {
+      display: none;
+    }
+  }
+}
+

@@ -26,6 +26,12 @@ html, body {
   }
 }
 
+@include mediaquery("max-width", map-get($breakpoints, medium)) {
+  .site-header {
+    letter-spacing: 0.0625em;
+  }
+}
+
 /**
  * A smaller version of the main container.
  * 1. Make the container full width with a maximum value.

@@ -30,4 +30,5 @@ import './components/_action-subtitle.scss';
 import './components/_item-list-selected.scss';
 import './components/_button-options.scss';
 import './components/_button-restart.scss';
+import './components/_back-nav.scss';
 

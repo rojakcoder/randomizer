@@ -7,6 +7,7 @@
 </template>
 
 <script>
+//@deprecated
 export default {
   name: 'button-prev',
   props: ['label']

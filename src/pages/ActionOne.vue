@@ -1,6 +1,10 @@
 <template>
   <div class="container-small">
 
+    <back-nav
+      @back="onClickBack"
+    ></back-nav>
+
     <action-title
       title="Pick one item"
       icon="1"
@@ -22,6 +26,7 @@
 </template>
 
 <script>
+import BackNav from '../components/BackNav.vue';
 import ActionTitle from '../components/ActionTitle.vue';
 import ActionSubtitle from '../components/ActionSubtitle.vue';
 import ItemListSelected from '../components/ItemListSelected.vue';
@@ -35,11 +40,15 @@ export default {
     }
   },
   components: {
+    BackNav,
     ActionTitle,
     ActionSubtitle,
     ItemListSelected
   },
   methods: {
+    onClickBack() {
+      this.$router.push('/action');
+    },
     onUpdateCount(count) {
       this.quantity = count;
     }
