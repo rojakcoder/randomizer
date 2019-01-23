@@ -14,6 +14,7 @@ import './layout/_footer.scss';
 import './layout/_forms.scss';
 
 import './pages/_home.scss';
+import './pages/_about.scss';
 
 import './components/_tables.scss';
 import './components/_app.scss';
