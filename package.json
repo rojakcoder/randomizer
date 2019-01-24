@@ -9,22 +9,29 @@
     "vuex": "^3.0.1"
   },
   "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
+    "@babel/plugin-proposal-class-properties": "^7.3.0",
+    "@babel/plugin-proposal-export-default-from": "^7.2.0",
+    "@babel/plugin-proposal-export-namespace-from": "^7.2.0",
+    "@babel/plugin-transform-runtime": "^7.2.0",
+    "@babel/preset-env": "^7.3.1",
     "node-sass": "^4.11.0",
     "rollup": "^0.67.3",
     "rollup-plugin-alias": "^1.4.0",
+    "rollup-plugin-babel": "^4.3.2",
     "rollup-plugin-css-only": "^0.4.0",
     "rollup-plugin-node-resolve": "^3.4.0",
     "rollup-plugin-postcss": "^1.6.3",
     "rollup-plugin-replace": "^2.1.0",
     "rollup-plugin-scss": "^0.4.0",
+    "rollup-plugin-uglify": "^6.0.1",
     "rollup-plugin-vue": "^4.3.2",
     "vue-template-compiler": "^2.5.19"
   },
   "scripts": {
-    "build": "node_modules/rollup/bin/rollup -c scripts/rollup.config.js",
-    "build:dev:js": "node_modules/rollup/bin/rollup -c scripts/rollup.config.js -w",
-    "build:dev:css": "node_modules/node-sass/bin/node-sass sass/ -o dist/ --watch --recursive",
-    "build:prod:css": "node_modules/node-sass/bin/node-sass sass/ -o dist/",
+    "build:dev": "node_modules/rollup/bin/rollup -c scripts/rollup.config.js -w",
+    "build:prod": "node_modules/rollup/bin/rollup -c scripts/rollup.config.prod.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "CH Chua",
