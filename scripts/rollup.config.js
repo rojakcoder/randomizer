@@ -15,8 +15,8 @@ var plugins = [
     css: false
   }),
   resolve({
-    //jsnext: true,
-    //main: true,
+    jsnext: true,
+    main: true,
     browser: true
   }),
   replace({
@@ -35,7 +35,7 @@ export default [
   {
     input: 'src/main.js',
     output: {
-      file: 'dist/build.js',
+      file: 'dist/build.min.js',
       sourcemap: true,
       format: 'iife'
     },
