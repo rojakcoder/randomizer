@@ -8,3 +8,18 @@ After installing the necessary packages (`npm install`), run the build script to
 
 The app can then be served using any Web server. A fast and simple way is to run `python -m SimpleHTTPServer`.
 
+## Notes
+
+### npm hashes changing from sha512 to sha1
+
+If the integrity checksum for the npm packages change from sha512 to sha1, the straightforward way is to re-install them.
+
+```bash
+rm -rf node_modules/
+rm package-lock.json
+npm cache clear --force
+npm install
+```
+
+[Reference](https://stackoverflow.com/questions/47638381/why-did-package-lock-json-change-the-integrity-hash-from-sha1-to-sha512)
+

@@ -5,23 +5,23 @@ import resolve from 'rollup-plugin-node-resolve';
 import replace from 'rollup-plugin-replace';
 import postcss from 'rollup-plugin-postcss'; // This must be imported in order to compile SCSS.
 import scss from 'rollup-plugin-scss';
-import { uglify } from 'rollup-plugin-uglify';
+import minify from 'rollup-plugin-minify-es';
 
 var plugins = [
   vue({
     css: false
   }),
-  babel({
-    runtimeHelpers: true,
-    sourceMap: true,
-    extensions: ['.js', '.vue']
-  }),
+  //babel({
+  //  runtimeHelpers: true,
+  //  sourceMap: true,
+  //  extensions: ['.js', '.vue']
+  //}),
   css(),
   replace({
     'process.env.NODE_ENV': JSON.stringify('production')
   }),
   resolve(),
-  //uglify()
+  minify()
 ];
 
 export default [
