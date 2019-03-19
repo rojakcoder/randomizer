@@ -2,7 +2,10 @@
   <div class="item-list-plain">
     <div class="container-small">
 
-      <div class="text-guide">
+      <div
+        v-if="items.length > 0"
+        class="text-guide"
+      >
         Click/tap an item for option to remove.
       </div>
 
