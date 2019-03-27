@@ -6,7 +6,19 @@ Randomizer is a lightweight Web app to help pick random items. It is a single pa
 
 After installing the necessary packages (`npm install`), run the build script to create the application.
 
+```bash
+npm run dev
+```
+
 The app can then be served using any Web server. A fast and simple way is to run `python -m SimpleHTTPServer`.
+
+## Deployment
+
+To build for production:
+
+```bash
+npm run prod
+```
 
 ## Notes
 

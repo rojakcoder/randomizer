@@ -1,5 +1,13 @@
 <template>
-  <div id="app">
+  <div id="app" class="home">
+
+    <h1>Random Item Picker</h1>
+
+    <div class="description">
+      <p>
+        A tool for selecting an item from a list at random.
+      </p>
+    </div>
 
     <item-add-field
       add-field-placeholder="Add new item"

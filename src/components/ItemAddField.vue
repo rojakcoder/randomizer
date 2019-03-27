@@ -3,6 +3,7 @@
 
     <div class="item-add-field">
       <input
+        autofocus
         class="item-add-field__input"
         type="text"
         name="add-field"

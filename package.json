@@ -33,9 +33,12 @@
     "vue-template-compiler": "^2.5.19"
   },
   "scripts": {
-    "dev": "npm-run-all --parallel build:dev reload",
-    "build:dev": "node_modules/rollup/bin/rollup -c scripts/rollup.config.js -w",
-    "build:prod": "node_modules/rollup/bin/rollup -c scripts/rollup.config.prod.js",
+    "dev": "npm-run-all --parallel dev:css dev:js reload",
+    "dev:css": "node-sass sass/ -o dist/ --watch --recursive",
+    "dev:js": "node_modules/rollup/bin/rollup -c scripts/rollup.config.js -w",
+    "prod": "npm-run-all --parallel prod:css prod:js",
+    "prod:css": "node-sass sass/ -o dist/ --output-style compressed",
+    "prod:js": "node_modules/rollup/bin/rollup -c scripts/rollup.config.prod.js",
     "reload": "node_modules/livereload/bin/livereload.js 'dist/'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

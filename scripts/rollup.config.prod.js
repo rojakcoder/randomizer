@@ -32,20 +32,19 @@ export default [
       format: 'iife'
     },
     plugins
-  },
-  {
-    input: 'sass/main.js',
-    output: {
-      file: 'dist/main.js',
-      format: 'iife'
-    },
-    plugins: [
-      scss({
-        outputStyle: 'compressed',
-        output: 'dist/main.css'
-      })
-    ]
+//  },
+//  {
+//    input: 'sass/main.js',
+//    output: {
+//      file: 'dist/main.js',
+//      format: 'iife'
+//    },
+//    plugins: [
+//      scss({
+//        outputStyle: 'compressed',
+//        output: 'dist/main.css'
+//      })
+//    ]
   }
 ];
-
 

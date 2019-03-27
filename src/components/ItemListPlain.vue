@@ -8,6 +8,12 @@
       >
         Click/tap an item for option to remove.
       </div>
+      <div
+        v-else
+        class="helptext"
+      >
+        Enter a list of items using the input box above. Once done, click NEXT to start picking an item from your list at random.
+      </div>
 
       <ul class="list-plain">
         <li
