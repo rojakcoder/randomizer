@@ -20,6 +20,8 @@ To build for production:
 npm run prod
 ```
 
+The files that need to be deployed are index.html and dist/
+
 ## Notes
 
 ### npm hashes changing from sha512 to sha1
